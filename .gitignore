@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+datacollector.py
 
 # C extensions
 *.so
@@ -127,5 +128,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-.vscode

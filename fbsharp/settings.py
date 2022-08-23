@@ -30,11 +30,13 @@ SECRET_KEY = 'django-insecure-ss01r^#b0hkoko0au=hdm#c2grw60t7j+-((v%+t-tenn7ou)-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+#ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['api-fbsharp.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 CORS_ALLOW_ALL_ORIGINS: True
 CORS_ORIGIN_ALLOW_ALL=True
 
+ENABLE_ORYX_BUILD = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -142,10 +144,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

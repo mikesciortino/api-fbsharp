@@ -5,3 +5,6 @@ pyodbc==4.0.34
 python-dotenv==0.20.0
 sleeper_api_wrapper==1.0.7
 whitenoise
+mssql-django
+mssql
+Werkzeug==2.1.2
