@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
 from dotenv import load_dotenv
+env = environ.Env()
 
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
@@ -26,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ss01r^#b0hkoko0au=hdm#c2grw60t7j+-((v%+t-tenn7ou)-'
-
+ENABLE_ORYX_BUILD = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -36,7 +38,6 @@ CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 CORS_ALLOW_ALL_ORIGINS: True
 CORS_ORIGIN_ALLOW_ALL=True
 
-ENABLE_ORYX_BUILD = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,7 +58,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whtienoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -96,17 +96,29 @@ WSGI_APPLICATION = 'fbsharp.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'zamorak',
+#         'HOST': 'zamorak.database.windows.net',
+#         'PORT': '1433',
+#         'USER': 'mjsciortino',
+#         'PASSWORD': '&Bulbasaur12&',
+#         'OPTIONS': {
+# 	            'driver': 'ODBC Driver 17 for SQL Server',
+# 	        },
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'zamorak.database.windows.net',
-        'HOST': 'zamorak',
+        'NAME': env.str("DB_NAME"),
+        'HOST': env.str("DB_SERVER"),
         'PORT': '1433',
-        'USER': 'mjsciortino',
-        'PASSWORD': '&Bulbasaur12&',
-        'OPTIONS': {
-	            'driver': 'ODBC Driver 17 for SQL Server',
-	        },
+        'USER': env.str("DB_USER"),
+        'PASSWORD': env.str("DB_PASSWORD"),
+        'OPTIONS': {'driver': 'ODBC Driver 17 for SQL Server'},
     }
 }
 
@@ -144,9 +156,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

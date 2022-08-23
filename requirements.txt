@@ -1,10 +1,11 @@
-Django==4.0.7
+Django
+django-cors-headers
+django-environ
 django_filter==22.1
 djangorestframework==3.13.1
 pyodbc==4.0.34
 python-dotenv==0.20.0
 sleeper_api_wrapper==1.0.7
-whitenoise
 mssql-django
 mssql
-Werkzeug==2.1.2
+Werkzeug
