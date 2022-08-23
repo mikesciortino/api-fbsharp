@@ -96,20 +96,6 @@ WSGI_APPLICATION = 'fbsharp.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'mssql',
-#         'NAME': 'zamorak',
-#         'HOST': 'zamorak.database.windows.net',
-#         'PORT': '1433',
-#         'USER': 'mjsciortino',
-#         'PASSWORD': '&Bulbasaur12&',
-#         'OPTIONS': {
-# 	            'driver': 'ODBC Driver 17 for SQL Server',
-# 	        },
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
