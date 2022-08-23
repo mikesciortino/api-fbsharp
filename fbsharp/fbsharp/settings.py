@@ -97,11 +97,11 @@ WSGI_APPLICATION = 'fbsharp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': os.getenv("DB_NAME"),
-        'HOST': os.getenv("DB_SERVER"),
+        'NAME': 'zamorak.database.windows.net',
+        'HOST': 'zamorak',
         'PORT': '1433',
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'USER': 'mjsciortino',
+        'PASSWORD': '&Bulbasaur12&',
         'OPTIONS': {
 	            'driver': 'ODBC Driver 17 for SQL Server',
 	        },
