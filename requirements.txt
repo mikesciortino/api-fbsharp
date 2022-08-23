@@ -4,5 +4,4 @@ djangorestframework==3.13.1
 pyodbc==4.0.34
 python-dotenv==0.20.0
 sleeper_api_wrapper==1.0.7
-django-mssql
-mssql-django
+whitenoise
