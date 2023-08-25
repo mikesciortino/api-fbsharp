@@ -5,5 +5,5 @@ class PlayerRankSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PlayerRank
-        fields = ('rank','full_name', 'team', 'position', 'adp', 'adpDelta', 'positionalRank', 'player_id')
+        fields = ('rank','full_name', 'team', 'position', 'age', 'priority', 'positionalRank', 'player_id')
         #field = '__all__'

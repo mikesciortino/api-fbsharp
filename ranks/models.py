@@ -9,8 +9,8 @@ class PlayerRank(models.Model):
     full_name = models.CharField(max_length=500)
     team = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
-    adp = models.CharField(max_length=100)
-    adpDelta = models.CharField(max_length=100)
+    age = models.CharField(max_length=100)
+    priority = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.rank + ' ' + self.full_name
+        return str(self.rank) + ' ' + self.full_name
